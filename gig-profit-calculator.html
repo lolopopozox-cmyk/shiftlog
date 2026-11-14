@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gig Worker Profit Per Hour Calculator | ShiftLog</title>
+<meta name="description" content="Free calculator for rideshare and delivery drivers. Enter income, fuel, tolls and hours to see your net profit and your real profit per hour.">
+<link rel="canonical" href="https://shiftlogapp.xyz/gig-profit-calculator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gig Worker Profit Per Hour Calculator">
+<meta property="og:description" content="Find out how much you really earned. Enter income, costs and hours to see net profit and profit per hour.">
+<meta property="og:url" content="https://shiftlogapp.xyz/gig-profit-calculator">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Gig Worker Profit Per Hour Calculator",
+  "url": "https://shiftlogapp.xyz/gig-profit-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "A free calculator that shows rideshare and delivery drivers their net profit and profit per hour for a shift.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root {
+    --bg: #f7f4ec;
+    --surface: #ffffff;
+    --ink: #17231d;
+    --muted: #55625b;
+    --accent: #0b6b4f;
+    --accent-ink: #ffffff;
+    --deep: #12291f;
+    --rule: #dcd8cb;
+    --field: #ffffff;
+    --bad: #a12b24;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101a15;
+      --surface: #16231c;
+      --ink: #eef1ec;
+      --muted: #a8b4ac;
+      --accent: #5fcf9f;
+      --accent-ink: #0b1a12;
+      --deep: #0a120e;
+      --rule: #2a3a31;
+      --field: #0f1a14;
+      --bad: #ff8f86;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .top { padding: 28px 0 0; }
+  .brand { font-family: Georgia, "Times New Roman", serif; font-size: 22px; color: var(--accent); text-decoration: none; }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 6.5vw, 3rem);
+    line-height: 1.15;
+    margin: 40px 0 14px;
+  }
+  .lede { color: var(--muted); font-size: 1.1rem; margin: 0 0 28px; max-width: 34em; }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0 0 12px;
+  }
+  h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  section { padding-top: 44px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .calc { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 22px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .full { grid-column: 1 / -1; }
+  label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; }
+  .hint { display: block; font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+  input, select {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    background: var(--field);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 11px 12px;
+  }
+  input:focus-visible, select:focus-visible, a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .result { margin-top: 22px; background: var(--deep); color: #eef1ec; border-radius: 14px; padding: 22px; }
+  .result .big { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 8vw, 2.8rem); line-height: 1.1; margin: 0 0 4px; }
+  .result .label { color: #c9d4cd; font-size: 0.95rem; margin: 0 0 14px; }
+  .result .row { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid rgba(255,255,255,0.14); padding: 10px 0 0; margin-top: 10px; }
+  .result .msg { color: #c9d4cd; margin: 14px 0 0; font-size: 0.95rem; }
+  .neg { color: #ffb3ac; }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 999px;
+  }
+  .small { color: var(--muted); font-size: 0.9rem; }
+  footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+  footer a { margin-right: 18px; }
+  @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/">ShiftLog</a></div>
+
+  <h1>Gig worker profit per hour calculator</h1>
+  <p class="lede">Find out how much you really earned on a shift. Enter your income, your costs and your hours to see your net profit and your profit per hour.</p>
+
+  <div class="calc">
+    <div class="grid">
+      <div class="full">
+        <label for="currency">Currency symbol</label>
+        <select id="currency">
+          <option value="$">$ (dollar)</option>
+          <option value="€">€ (euro)</option>
+          <option value="£">£ (pound)</option>
+        </select>
+      </div>
+      <div>
+        <label for="income">Pay from rides or deliveries</label>
+        <input id="income" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div>
+        <label for="tips">Tips and bonuses</label>
+        <input id="tips" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div>
+        <label for="fuel">Fuel or charging</label>
+        <input id="fuel" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div>
+        <label for="tolls">Tolls and parking</label>
+        <input id="tolls" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div>
+        <label for="food">Food and drinks</label>
+        <input id="food" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div>
+        <label for="other">Other costs <span class="hint">Car wash, repairs, phone data</span></label>
+        <input id="other" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+      <div class="full">
+        <label for="hours">Hours worked <span class="hint">Include waiting and driving between jobs. 7.5 means 7 hours 30 minutes.</span></label>
+        <input id="hours" type="number" inputmode="decimal" min="0" step="any" placeholder="0">
+      </div>
+    </div>
+
+    <div class="result" aria-live="polite">
+      <p class="big" id="net">Enter your numbers</p>
+      <p class="label">Net profit for the shift</p>
+      <div class="row"><span>Profit per hour</span><strong id="perhour">–</strong></div>
+      <div class="row"><span>Total costs</span><strong id="costs">–</strong></div>
+      <div class="row"><span>Share of income spent on costs</span><strong id="share">–</strong></div>
+      <p class="msg" id="msg"></p>
+    </div>
+    <p class="small" style="margin:14px 0 0">The numbers stay in your browser. Nothing is sent or saved.</p>
+  </div>
+
+  <section>
+    <h2>How the calculation works</h2>
+    <p><strong>Net profit</strong> is your pay plus tips and bonuses, minus all your costs. <strong>Profit per hour</strong> is your net profit divided by the hours you worked.</p>
+    <p>Use the full time you spent, not only the time with a passenger or an order. Waiting for the next job and driving between jobs are part of the shift, and they are the reason a high-paying shift can still earn little per hour.</p>
+    <h3>Costs to include</h3>
+    <ul>
+      <li>Fuel or charging.</li>
+      <li>Tolls and parking.</li>
+      <li>Food and drinks you bought during the shift.</li>
+      <li>Car wash, small repairs and phone data.</li>
+    </ul>
+    <p>Wear on your vehicle is also a real cost. It is harder to measure, so many drivers add a rough amount per shift to “Other costs”. This calculator gives an estimate and is not tax advice. Tax rules differ by country, so ask a tax professional what you can claim.</p>
+  </section>
+
+  <section>
+    <h2>Common questions</h2>
+    <h3>What is a good profit per hour for a driver?</h3>
+    <p>It depends on your city, your vehicle and the hours you work, so no single number fits everyone. The useful comparison is your own: calculate it for each shift and see which days, hours and apps give you more per hour.</p>
+    <h3>Should I include tips?</h3>
+    <p>Yes. Tips are income you earned during the shift, so add them in the tips field.</p>
+    <h3>Why is my profit per hour lower than the app showed me?</h3>
+    <p>Gig apps usually show pay for the time with an order. This calculator divides your profit by all the hours you worked and also takes your costs out of your pay.</p>
+  </section>
+
+  <section>
+    <h2>Track every shift automatically</h2>
+    <p>Doing this by hand after every shift takes time. ShiftLog is a free Android app where you log your shifts, income and expenses and see your net profit, with no account needed.</p>
+    <p><a class="btn" href="https://play.google.com/store/apps/details?id=com.shiftlog.app" rel="noopener">Get ShiftLog on Google Play</a></p>
+  </section>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/privacy-policy">Privacy policy</a>
+    <a href="mailto:nomtexes@gmail.com">Contact: nomtexes@gmail.com</a>
+    <p>© 2026 ShiftLog</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var ids = ["income", "tips", "fuel", "tolls", "food", "other", "hours"];
+  var cur = document.getElementById("currency");
+  var $ = function (id) { return document.getElementById(id); };
+
+  function val(id) {
+    var v = parseFloat($(id).value);
+    return isFinite(v) && v > 0 ? v : 0;
+  }
+  function money(n) {
+    var a = Math.abs(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return (n < 0 ? "-" : "") + cur.value + a;
+  }
+  function calc() {
+    var income = val("income") + val("tips");
+    var costs = val("fuel") + val("tolls") + val("food") + val("other");
+    var hours = val("hours");
+    var net = income - costs;
+    var anyInput = income > 0 || costs > 0 || hours > 0;
+
+    var netEl = $("net");
+    if (!anyInput) {
+      netEl.textContent = "Enter your numbers";
+      netEl.className = "big";
+      $("perhour").textContent = "–";
+      $("costs").textContent = "–";
+      $("share").textContent = "–";
+      $("msg").textContent = "";
+      return;
+    }
+    netEl.textContent = money(net);
+    netEl.className = net < 0 ? "big neg" : "big";
+    $("costs").textContent = money(costs);
+    $("share").textContent = income > 0 ? Math.round((costs / income) * 100) + "%" : "–";
+
+    if (hours > 0) {
+      $("perhour").textContent = money(net / hours) + " per hour";
+      $("msg").textContent = net < 0
+        ? "This shift cost more than it earned."
+        : "This is what you kept for each hour you worked.";
+    } else {
+      $("perhour").textContent = "Enter your hours";
+      $("msg").textContent = "Add the hours you worked to see profit per hour.";
+    }
+  }
+  ids.forEach(function (id) { $(id).addEventListener("input", calc); });
+  cur.addEventListener("change", calc);
+  calc();
+})();
+</script>
+</body>
+</html>
