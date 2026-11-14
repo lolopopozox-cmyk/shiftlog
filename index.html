@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShiftLog: Shift Profit Tracker for Gig Workers</title>
+<meta name="description" content="Work out what you really earn today. Track shifts, log income, fuel and expenses, and see your net profit. Free for rideshare and delivery drivers. No account.">
+<link rel="canonical" href="https://shiftlogapp.xyz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ShiftLog: Shift Profit Tracker for Gig Workers">
+<meta property="og:description" content="Know what every shift really pays. Free shift, income and expense tracker for gig workers. No account.">
+<meta property="og:url" content="https://shiftlogapp.xyz/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ShiftLog",
+  "alternateName": "ShiftLog: Shift Profit Tracker",
+  "operatingSystem": "Android",
+  "applicationCategory": "FinanceApplication",
+  "description": "A free shift, income and expense tracker that shows gig workers their real net profit. No account needed.",
+  "url": "https://shiftlogapp.xyz/",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.shiftlog.app",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root {
+    --bg: #f7f4ec;
+    --surface: #ffffff;
+    --ink: #17231d;
+    --muted: #55625b;
+    --accent: #0b6b4f;
+    --accent-ink: #ffffff;
+    --deep: #12291f;
+    --rule: #dcd8cb;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101a15;
+      --surface: #16231c;
+      --ink: #eef1ec;
+      --muted: #a8b4ac;
+      --accent: #5fcf9f;
+      --accent-ink: #0b1a12;
+      --deep: #0a120e;
+      --rule: #2a3a31;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .top { padding: 28px 0 0; }
+  .brand { font-family: Georgia, "Times New Roman", serif; font-size: 22px; color: var(--accent); text-decoration: none; }
+  .hero { padding: 56px 0 48px; }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 34em; margin: 0 0 28px; }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 999px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .note { color: var(--muted); font-size: 0.95rem; margin: 14px 0 0; }
+  .band { background: var(--deep); color: #eef1ec; padding: 44px 0; }
+  .band h2 { color: #eef1ec; }
+  .band p { color: #c9d4cd; margin: 0; max-width: 34em; }
+  section { padding: 44px 0 0; }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin: 0 0 14px;
+  }
+  h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  .formula {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    margin: 0 0 14px;
+  }
+  .formula p { margin: 0 0 6px; }
+  .formula p:last-child { margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+  footer a { margin-right: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/">ShiftLog</a></div>
+
+  <header class="hero">
+    <h1>Know what every shift really pays.</h1>
+    <p class="lede">Gross pay is not profit. ShiftLog is a free shift tracker for gig workers that takes fuel, tolls, food and your other costs out of your income, so you can see how much you really earned today.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.shiftlog.app" rel="noopener">Get ShiftLog on Google Play</a>
+    <p class="note">Free for Android. No account or sign-up.</p>
+  </header>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <h2>Made for rideshare, delivery and hourly work</h2>
+    <p>A busy day can still be a poor one once costs are counted. Whether you drive rideshare, deliver food or parcels, or work paid-by-the-hour gigs, ShiftLog shows the number that matters: what you actually kept.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>What ShiftLog does</h2>
+    <ul>
+      <li>Track each shift from start to finish.</li>
+      <li>Log your income and your expenses as they happen.</li>
+      <li>See your net profit instead of just your gross pay.</li>
+    </ul>
+  </section>
+
+  <section id="how-to-calculate">
+    <h2>How to work out what you really earn today</h2>
+    <p>Many gig workers look at the total shown in the delivery or rideshare app. That total is your income, not your profit. To find your real earnings for a shift:</p>
+    <div class="formula">
+      <p><strong>Net profit</strong> = income (fares, tips, bonuses) minus costs (fuel, tolls, parking, food and other expenses)</p>
+      <p><strong>Profit per hour</strong> = net profit divided by the total hours you worked</p>
+    </div>
+    <p>Count all your hours, including time spent waiting for orders and driving between jobs. This is why a shift with high pay can still earn less per hour than a shorter one.</p>
+    <p>Typical costs to remember: fuel or charging, tolls and parking, food and drinks on the road, car wash and small repairs, phone data, and the slow wear on your vehicle. Tax rules differ by country, so check with a tax professional for what you can claim.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Common questions</h2>
+    <h3>How do I know if a shift was worth it?</h3>
+    <p>Add up everything you earned, subtract everything the shift cost you, and divide by the hours you spent. Do this for every shift and compare. ShiftLog keeps these records in one place so you can see your results over time.</p>
+    <h3>Is ShiftLog only for drivers?</h3>
+    <p>No. It is built for rideshare and delivery drivers, but anyone who earns by the shift or by the hour and has costs to track can use it.</p>
+    <h3>Do I need an account?</h3>
+    <p>No. There is no sign-up, and your shift records are stored on your phone.</p>
+    <h3>Is it free?</h3>
+    <p>Yes. The app is free and shows one banner ad from Google AdMob.</p>
+  </section>
+
+  <section>
+    <h2>Private by design</h2>
+    <p>Your shifts, income and expenses stay on your phone. ShiftLog does not run user accounts or servers for your records. The ad service collects some data to show and measure ads, and the <a href="/privacy-policy">privacy policy</a> explains exactly what.</p>
+  </section>
+
+  <section>
+    <h2>Get started</h2>
+    <p>Install ShiftLog, start your next shift, and see your real profit at the end of the day.</p>
+    <p><a class="btn" href="https://play.google.com/store/apps/details?id=com.shiftlog.app" rel="noopener">Get ShiftLog on Google Play</a></p>
+  </section>
+
+  <footer>
+    <a href="/privacy-policy">Privacy policy</a>
+    <a href="mailto:nomtexes@gmail.com">Contact: nomtexes@gmail.com</a>
+    <p>© 2026 ShiftLog</p>
+  </footer>
+</div>
+</body>
+</html>
