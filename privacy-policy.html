@@ -1,56 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>ShiftLog - Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShiftLog Privacy Policy</title>
+<meta name="description" content="How ShiftLog handles your data: no account, shift records stay on your device, and how ads from Google AdMob work.">
 <style>
-body { font-family: Arial, sans-serif; max-width: 800px; 
-margin: 40px auto; padding: 20px; color: #333; }
-h1 { color: #0B7A5E; }
-h2 { color: #0B7A5E; margin-top: 30px; }
+  :root {
+    --bg: #f7f4ec;
+    --surface: #ffffff;
+    --ink: #17231d;
+    --muted: #55625b;
+    --accent: #0b6b4f;
+    --rule: #dcd8cb;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101a15;
+      --surface: #16231c;
+      --ink: #eef1ec;
+      --muted: #a8b4ac;
+      --accent: #5fcf9f;
+      --rule: #2a3a31;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+  }
+  header { margin-bottom: 32px; }
+  .brand {
+    display: inline-block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.15;
+    margin: 0 0 12px;
+  }
+  .updated { color: var(--muted); margin: 0; }
+  .intro { margin-top: 20px; }
+  section { padding-top: 28px; margin-top: 28px; border-top: 1px solid var(--rule); }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 0 0 12px;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  strong { font-weight: 650; }
+  code { font-size: 0.92em; word-break: break-word; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.95rem; }
 </style>
 </head>
 <body>
-<h1>Privacy Policy — ShiftLog</h1>
-<p>Last updated: September 12, 2026</p>
-<p>ShiftLog is developed by NOM TEXES (Abdullah Naseer), 
-an independent developer based in Pakistan.</p>
+<div class="wrap">
+  <header>
+    <a class="brand" href="/">ShiftLog</a>
+    <h1>ShiftLog Privacy Policy</h1>
+    <p class="updated"><strong>Last updated: November 11, 2026</strong></p>
+    <p class="intro">ShiftLog (“the app”) is a personal shift and profit tracker for gig and hourly workers, published by NOM TEXES (Abdullah Naseer), an independent developer (“we”, “us”). It lets you start a shift, run a live timer, and record income and expenses so you can see your net profit. This Privacy Policy explains what data the app handles and how.</p>
+  </header>
 
-<h2>Data Collection</h2>
-<p>ShiftLog does NOT collect, transmit, or share any 
-personal data. All shift data, income entries, and 
-expense entries are stored locally on your device only. 
-No account or registration is required to use ShiftLog.</p>
+  <main>
+    <section id="no-account">
+      <h2>1. No account, no servers</h2>
+      <p>ShiftLog does not need an account, sign-up or login. We run no backend, server or user profiles. We do not receive your shift records.</p>
+    </section>
 
-<h2>Data Storage</h2>
-<p>All data you enter in ShiftLog (shifts, income, expenses) 
-is stored only on your device using a local database. 
-This data is never uploaded to any server.</p>
+    <section id="on-device">
+      <h2>2. Data you enter stays on your device</h2>
+      <p>Everything you enter in the app is stored on your device only: your shifts, start and end times, notes, and each income or expense entry with its amount and category. Your selected currency, theme, daily goal and other settings are also stored locally on the device.</p>
+      <p>The records are kept in an on-device database inside the app’s private storage area. All calculations (totals, net profit, hourly rates, charts) happen on the device. ShiftLog never sends this data to us or to anyone else.</p>
+      <p>If Android backup is turned on in your device settings, Android may include the app’s data in your Google account backup. That is controlled by your device and Google, not by ShiftLog.</p>
+    </section>
 
-<h2>Advertising</h2>
-<p>ShiftLog uses Google AdMob to display advertisements. 
-Google AdMob may collect device identifiers and usage 
-data to serve personalized ads. For users in the EEA, 
-UK, and Switzerland, consent is requested before any 
-ads are shown. For more information about how Google 
-uses data, please visit: 
-https://policies.google.com/privacy</p>
+    <section id="advertising">
+      <h2>3. Advertising (Google AdMob)</h2>
+      <p>The free version of ShiftLog is supported by one banner ad served by Google AdMob (the Google Mobile Ads SDK). This SDK is the only part of the app that collects data. To serve and measure ads and to prevent fraud, Google may collect and share:</p>
+      <ul>
+        <li><strong>Device or other identifiers</strong>, such as the Android advertising ID.</li>
+        <li><strong>App activity</strong>, such as ad interactions.</li>
+        <li><strong>App information and performance</strong>, such as diagnostics and crash information.</li>
+        <li>Your <strong>IP address</strong> and the approximate location derived from it.</li>
+      </ul>
+      <p>This data is collected and shared for <strong>advertising, analytics and fraud prevention</strong>. It is sent over an encrypted connection and is handled by Google under Google’s Privacy Policy: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>. ShiftLog does not send your shift records to Google.</p>
+      <p>You can reset or delete your advertising ID, or opt out of ad personalisation, in your Android settings (Settings &gt; Privacy &gt; Ads).</p>
+    </section>
 
-<h2>Third Party Services</h2>
-<p>ShiftLog uses Google AdMob (advertising) and Google 
-Play Services. These services have their own privacy 
-policies which govern their data collection.</p>
+    <section id="consent">
+      <h2>4. Your ad consent choices</h2>
+      <p>If you are in the European Economic Area, the United Kingdom or Switzerland, ShiftLog uses Google’s User Messaging Platform (UMP) to show a consent form, and no ad is requested until the choices you make allow it. Where the form is required, you can change your choice at any time in the app under <strong>Settings &gt; Privacy options</strong>. Where no consent is required by law, ads may be shown without a form.</p>
+    </section>
 
-<h2>Children</h2>
-<p>ShiftLog is not directed at children under 13 years 
-of age.</p>
+    <section id="permissions">
+      <h2>5. Permissions</h2>
+      <p>The app’s merged Android manifest requests only these permissions:</p>
+      <ul>
+        <li><strong>INTERNET</strong> and <strong>ACCESS_NETWORK_STATE</strong>: so the ad SDK can load ads and so links you tap (such as this Privacy Policy) can open.</li>
+        <li><strong>com.google.android.gms.permission.AD_ID</strong> and the Android Ad Services permissions <strong>ACCESS_ADSERVICES_AD_ID</strong>, <strong>ACCESS_ADSERVICES_ATTRIBUTION</strong> and <strong>ACCESS_ADSERVICES_TOPICS</strong>: declared by the ad SDK for the advertising ID and privacy-preserving ad measurement.</li>
+        <li><strong>WAKE_LOCK</strong> and <strong>FOREGROUND_SERVICE</strong>: declared by the ad SDK for its own background work.</li>
+        <li>An internal app-only permission (<strong>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</strong>) added automatically by AndroidX to keep the app’s own broadcast receivers private. It gives no access to your data.</li>
+      </ul>
+      <p>ShiftLog does not request access to your location, contacts, camera, microphone, photos or files.</p>
+    </section>
 
-<h2>Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. 
-Changes will be posted on this page with an updated 
-date.</p>
+    <section id="payments">
+      <h2>6. Payments and subscriptions</h2>
+      <p>ShiftLog is currently free and contains no in-app purchases or payment features. A paid Premium option is marked “Coming soon” but is not available. If paid features are ever added, they would be sold and processed by Google Play, ShiftLog would never receive or store your payment details, and this policy would be updated first.</p>
+    </section>
 
-<h2>Contact</h2>
-<p>If you have questions about this Privacy Policy, 
-please contact us at: nomtexes@gmail.com</p>
+    <section id="retention">
+      <h2>7. Data retention</h2>
+      <p>Your shift records stay on your device until you delete them or uninstall the app. ShiftLog does not keep copies elsewhere. Data held by Google AdMob is retained under Google’s own policies.</p>
+    </section>
+
+    <section id="deleting">
+      <h2>8. Deleting your data</h2>
+      <p>You are in control:</p>
+      <ul>
+        <li><strong>One shift:</strong> open the shift from Home or History and tap Delete. After you confirm, that shift and its entries are permanently removed. Other shifts are not affected. You can also edit a shift’s times, note and entries from the same screen.</li>
+        <li><strong>All shift data:</strong> Settings &gt; Delete all shift data permanently removes every shift and entry stored by ShiftLog on the device.</li>
+        <li><strong>Everything on the device:</strong> clear the app’s storage in your device settings (Apps &gt; ShiftLog &gt; Storage &gt; Clear data) or uninstall the app.</li>
+        <li><strong>Advertising data held by Google:</strong> use your Google account’s ad settings.</li>
+      </ul>
+      <p>Because ShiftLog keeps no copy of your records on any server, we cannot recover deleted data.</p>
+    </section>
+
+    <section id="security">
+      <h2>9. Security</h2>
+      <p>Your data is kept in the app’s private storage area, which other apps cannot read on a non-rooted device. No system is perfectly secure, so we encourage you to protect your device with a screen lock.</p>
+    </section>
+
+    <section id="children">
+      <h2>10. Children’s privacy</h2>
+      <p>ShiftLog is intended for working adults and is not directed at children. We do not knowingly collect personal information from children under 13. If you believe a child has provided data through the app, contact us and we will help.</p>
+    </section>
+
+    <section id="changes">
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this Privacy Policy as the app evolves, for example when new features are added. Material changes will be posted with an updated date at the top of this page. The latest version is always at <a href="https://shiftlogapp.xyz/privacy-policy">https://shiftlogapp.xyz/privacy-policy</a>.</p>
+    </section>
+
+    <section id="contact">
+      <h2>12. Contact</h2>
+      <p>Questions about privacy? Email <a href="mailto:nomtexes@gmail.com"><strong>nomtexes@gmail.com</strong></a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 ShiftLog</p>
+  </footer>
+</div>
 </body>
 </html>
